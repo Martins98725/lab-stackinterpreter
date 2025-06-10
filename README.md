@@ -19,7 +19,22 @@ Neste laboratório, construiremos um interpretador para uma linguagem simples qu
 - BRENDO HENRY RAIOL FERNANDES
 - LUCAS SERRA MELONIO
 - CAUA GABRIEL SANTOS BARROS
-  
+
+## 📂 Organização do Projeto
+O projeto foi organizado seguindo a estrutura sugerida na descrição do laboratório. A separação de responsabilidades é a seguinte:
+```shell
+  $ tree
+ /maquina-pilha
+│
+├── main.c            // Loop principal REPL
+├── interpret.c       // Processamento dos comandos
+├── interpret.h
+├── stack.c           // Implementação da pilha
+├── stack.h
+├── README.md
+```
+
+
 ## Instruções de Compilação
 Ainda não tem (bua,bua,bua)
 
