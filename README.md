@@ -1,4 +1,4 @@
-# Laboratório - Máquina Virtual Baseada em Pilha — Etapa 1
+# Laboratório - Máquina Virtual Baseada em Pilha
 
 > **Disciplina** <br>
 >
