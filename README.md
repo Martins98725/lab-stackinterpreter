@@ -1,4 +1,4 @@
-# Laboratório - Máquina Virtual Baseada em Pilha
+# Laboratório -  Um REPL para uma máquina baseada em pilha
 
 > **Disciplina** <br>
 >
