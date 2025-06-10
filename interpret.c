@@ -71,20 +71,41 @@ void interpret(const char *source)
 
         stack_push(stack, resultado);
     }
+        
     else if (strcmp(op, "pop") == 0)
     {
         int value = stack_pop(stack);
         if (value != -1)
             printf("Valor desempilhado: %d\n", value);
-    }
-    else if (strcmp(op, "print") == 0)
-    {
+    } 
+        
+    else if (strcmp(op,"div") == 0){
+      int numero1 = stack_pop(stack);
+      int numero2 = stack_pop(stack);
 
-        stack_print(stack);
-    }
+        if (numero1 == -1 || numero2 == -1) {
+        printf("Erro: pilha com menos de 2 elementos.\n");
+        return;
+        }
+    
+        if (numero1 == 0){
+        printf("Erro: divisão por zero.\n");
+        return;
+        }
+        
+      int resultado = numero1/numero2;
+      stack_push(stack, resultado);
+     } 
+
+    else if (strcmp(op,"print") == 0){
+      printf("%d\n", stack_pop(stack));
+     } 
+    
     else
     {
         printf("Operação desconhecida: %s\n", op);
         return;
     }
+    
+      stack_print(stack);
 }
