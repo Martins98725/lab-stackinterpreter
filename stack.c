@@ -4,7 +4,7 @@
 
 struct stack
 {
-    int *data;
+    int *values;
     int capacity;
     int top;
 };
@@ -15,9 +15,9 @@ Stack *new_stack(int size)
     if (!stack)
         return NULL;
 
-    stack->data = (int *)malloc(size * sizeof(int));
+    stack->values = (int *)malloc(size * sizeof(int));
 
-    if (!stack->data)
+    if (!stack->values)
     {
         free(stack);
         return NULL;
@@ -38,7 +38,7 @@ void stack_push(Stack *s, int value)
     }
     else
     {
-        s->data[++s->top] = value;
+        s->values[++s->top] = value;
         printf("Valor %d empilhado.\n", value);
     }
 }
@@ -50,7 +50,7 @@ int stack_pop(Stack *s)
         printf("Erro: pilha vazia!\n");
         return -1;
     }
-    return s->data[(s->top)--];
+    return s->values[(s->top)--];
 }
 
 void stack_print(Stack *s)
@@ -63,7 +63,7 @@ void stack_print(Stack *s)
     printf("Pilha: ");
     for (int i = 0; i <= s->top; i++)
     {
-        printf("%d ", s->data[i]);
+        printf("%d ", s->values[i]);
     }
     printf("\n");
 }
