@@ -1,10 +1,9 @@
 # Laboratório -  Um REPL para uma máquina baseada em pilha
 
-> **Disciplina** <br>
->
 > Algoritmos e Estruturas de Dados  
-> Curso: Bacharelado Interdisciplinar em Ciência e Tecnologia (BICT)  
-> Universidade Federal do Maranhão (UFMA)
+> Bacharelado Interdisciplinar em Ciência e Tecnologia (BICT)  
+> Universidade Federal do Maranhão (UFMA) <br>
+> Prof. Dr. Sergio Souza Costa
 
 ## Objetivo
 Desenvolver um interpretador interativo (REPL) em linguagem C que simula uma máquina virtual com arquitetura de pilha, comum em linguagens como Python e Java. O programa deve ser capaz de ler comandos do usuário, avaliá-los e imprimir o resultado de forma contínua.
@@ -35,9 +34,23 @@ O projeto foi organizado seguindo a estrutura sugerida na descrição do laborat
 ```
 
 
-## Instruções de Compilação
+## Instruções de Compilação, comandos e Uso
 ### Pré-requisitos
 - Um compilador C (como GCC)
+
+### Instruções de Compilação
+1. Abra seu terminal na pasta raiz do projeto.
+2. Execute o comando abaixo para compilar todos os arquivos e gerar o executável:
+   ```shell
+    gcc *.c
+   ```
+### Como Usar
+1. Após a compilação, execute o programa com o seguinte comando:
+   ```shell
+    ./main
+   ```
+2. O programa iniciará o modo interativo (REPL). Digite os comandos desejados e pressione Enter.
+3. Para encerrar a execução, digite exit.
 
 ### Comandos Disponíveis:
 O interpretador suporta os seguintes comandos:
@@ -51,6 +64,22 @@ O interpretador suporta os seguintes comandos:
 | `div`          | Desempilha dois valores, realiza a divisão inteira do primeiro pelo segundo e empilha o resultado. |
 | `print`        | Desempilha o valor do topo da pilha e o imprime no console.                             |
 | `exit`         | Encerra a execução do programa de forma segura.                                         | 
+
+### 🧪 Exemplo d Interação
+
+```shell
+> push 10
+> push 5
+> add
+> print
+15
+> push 8
+> push 2
+> div
+> print
+4
+> exit
+```
 
 ## 🤝 Autores
 <table>
