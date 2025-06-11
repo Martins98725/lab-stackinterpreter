@@ -35,8 +35,9 @@ O projeto foi organizado seguindo a estrutura sugerida na descrição do laborat
 ```
 
 
-## Instruções de Compilação
-Ainda não tem (bua,bua,bua)
+## Instruções de Compilação e Uso
+### Pré-requisitos
+Um compilador C (como GCC)
 
 ## 🤝 Autores
 <table>
