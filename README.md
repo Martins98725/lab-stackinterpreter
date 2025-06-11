@@ -39,6 +39,19 @@ O projeto foi organizado seguindo a estrutura sugerida na descrição do laborat
 ### Pré-requisitos
 - Um compilador C (como GCC)
 
+### Comandos Disponíveis:
+O interpretador suporta os seguintes comandos:
+
+| Comando        | Descrição                                                                               |
+| :------------- | :-------------------------------------------------------------------------------------- |
+| `push <valor>` | Adiciona (empilha) um número inteiro no topo da pilha.                                  | 
+| `add`          | Desempilha dois valores, soma-os e empilha o resultado.                                 | 
+| `sub`          | Desempilha dois valores, subtrai o segundo do primeiro e empilha o resultado.            |
+| `mul`          | Desempilha dois valores, multiplica-os e empilha o resultado.                           |
+| `div`          | Desempilha dois valores, realiza a divisão inteira do primeiro pelo segundo e empilha o resultado. |
+| `print`        | Desempilha o valor do topo da pilha e o imprime no console.                             |
+| `exit`         | Encerra a execução do programa de forma segura.                                         | 
+
 ## 🤝 Autores
 <table>
   <tr>
