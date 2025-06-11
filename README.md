@@ -24,7 +24,7 @@ Neste laboratório, construiremos um interpretador para uma linguagem simples qu
 O projeto foi organizado seguindo a estrutura sugerida na descrição do laboratório. A separação de responsabilidades é a seguinte:
 ```shell
   $ tree
- /maquina-pilha
+ /lab-stackinterpreter
 │
 ├── main.c            // Loop principal REPL
 ├── interpret.c       // Processamento dos comandos
