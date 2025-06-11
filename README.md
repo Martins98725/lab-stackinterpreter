@@ -35,9 +35,9 @@ O projeto foi organizado seguindo a estrutura sugerida na descrição do laborat
 ```
 
 
-## Instruções de Compilação e Uso
+## Instruções de Compilação
 ### Pré-requisitos
-Um compilador C (como GCC)
+- Um compilador C (como GCC)
 
 ## 🤝 Autores
 <table>
