@@ -1,4 +1,4 @@
-# Laboratório -  Um REPL para uma máquina baseada em pilha
+# Laboratório -  Um REPL para uma máquina baseada em pilha - Etapa 1
 
 > Algoritmos e Estruturas de Dados  
 > Bacharelado Interdisciplinar em Ciência e Tecnologia (BICT)  
