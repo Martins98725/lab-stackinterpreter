@@ -42,7 +42,7 @@ O projeto foi organizado seguindo a estrutura sugerida na descrição do laborat
 1. Abra seu terminal na pasta raiz do projeto.
 2. Execute o comando abaixo para compilar todos os arquivos e gerar o executável:
    ```shell
-    gcc *.c
+    gcc *.c -o main
    ```
 ### Como Usar
 1. Após a compilação, execute o programa com o seguinte comando:
