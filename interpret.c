@@ -9,6 +9,7 @@ static Stack *stack = NULL;
 
 void interpret(const char *source)
 {
+    int numero1, numero2;
 
     if (stack == NULL)
     {
@@ -27,8 +28,8 @@ void interpret(const char *source)
     }
     else if (strcmp(op, "add") == 0)
     {
-        int numero1 = stack_pop(stack);
-        int numero2 = stack_pop(stack);
+        numero1 = stack_pop(stack);
+        numero2 = stack_pop(stack);
 
         if (numero1 == -1 || numero2 == -1)
         {
@@ -43,8 +44,8 @@ void interpret(const char *source)
 
     else if (strcmp(op, "sub") == 0)
     {
-        int numero1 = stack_pop(stack);
-        int numero2 = stack_pop(stack);
+        numero1 = stack_pop(stack);
+        numero2 = stack_pop(stack);
 
         if (numero1 == -1 || numero2 == -1)
         {
@@ -57,8 +58,8 @@ void interpret(const char *source)
     }
     else if (strcmp(op, "mul") == 0)
     {
-        int numero1 = stack_pop(stack);
-        int numero2 = stack_pop(stack);
+        numero1 = stack_pop(stack);
+        numero2 = stack_pop(stack);
 
         if (numero1 == -1 || numero2 == -1)
         {
@@ -80,8 +81,8 @@ void interpret(const char *source)
 
     else if (strcmp(op, "div") == 0)
     {
-        int numero1 = stack_pop(stack);
-        int numero2 = stack_pop(stack);
+        numero1 = stack_pop(stack);
+        numero2 = stack_pop(stack);
 
         if (numero1 == -1 || numero2 == -1)
         {
