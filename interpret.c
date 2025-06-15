@@ -100,6 +100,8 @@ void interpret(const char *source)
         stack_print(stack);
     }
 
+
+
     else
     {
         printf("Operação desconhecida: %s\n", op);

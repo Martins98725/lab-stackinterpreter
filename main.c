@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <string.h>
 #include "interpret.h"
 
 static void repl()
@@ -15,15 +15,21 @@ static void repl()
       break;
     }
 
+    line[strcspn(line, "\n")] = '\0';
+
+    if (strcmp(line, "exit") == 0)
+    {
+      printf("Encerrando o interpretador...\n");
+      break;
+    }
+
     interpret(line);
   }
 }
 
+int main()
+{
 
-
-
-int main () {
-
-    repl();
-    return 0;
+  repl();
+  return 0;
 }
