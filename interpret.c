@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "stack.h"
+#include "lista.h"
 
 #include "interpret.h"
 
