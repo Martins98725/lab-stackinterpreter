@@ -12,6 +12,14 @@ Desenvolver um interpretador interativo (REPL) em linguagem C que simula uma má
 
 Neste laboratório, construiremos um interpretador para uma linguagem simples que opera sobre uma pilha de inteiros, com suporte posterior a variáveis.
 
+## Desenvolvimento em Etapas
+O desenvolvimento deste laboratório foi estruturado em duas etapas principais para facilitar a construção e a compreensão do sistema:
+
+- Etapa 1: Foca na criação do interpretador básico com as operações aritméticas fundamentais utilizando uma pilha.
+- Etapa 2: Expande o interpretador, adicionando uma memória de variáveis implementada com uma lista encadeada, permitindo salvar e reutilizar valores.
+
+
+
 ## 👥 Integrantes
 - FABIO DUARTE RIBEIRO
 - ICARO GABRYEL ARAUJO MARTINS
@@ -19,7 +27,7 @@ Neste laboratório, construiremos um interpretador para uma linguagem simples qu
 - LUCAS SERRA MELONIO
 - CAUA GABRIEL SANTOS BARROS
 
-## 📂 Organização do Projeto
+## 📂 Organização do Projeto (Etapa 1)
 O projeto foi organizado seguindo a estrutura sugerida na descrição do laboratório. A separação de responsabilidades é a seguinte:
 ```shell
   $ tree
@@ -52,7 +60,7 @@ O projeto foi organizado seguindo a estrutura sugerida na descrição do laborat
 2. O programa iniciará o modo interativo (REPL). Digite os comandos desejados e pressione Enter.
 3. Para encerrar a execução, digite exit.
 
-### Comandos Disponíveis:
+### Comandos Disponíveis (Etapa 1):
 O interpretador suporta os seguintes comandos:
 
 | Comando        | Descrição                                                                               |
@@ -79,6 +87,48 @@ O interpretador suporta os seguintes comandos:
 > print
 4
 > exit
+```
+
+# Máquina baseada em pilha - Etapa 2
+## Objetivo
+Ampliar a funcionalidade do interpretador da máquina virtual baseado em pilha, implementando uma memória de variáveis usando uma lista encadeada. Esta etapa introduz o uso de variáveis nomeadas e operações entre elas.
+
+**Conceitos Praticados**
+- Implementação e uso de **lista encadeada**
+- Armazenamento e atualização de variáveis
+- Integração entre estruturas de dados: **pilha** e **lista**
+
+## Novos Comandos
+push <valor | nome_variável>
+- Se for um número inteiro: empilha normalmente.
+- Se for o nome de uma variável:
+  - Busca na lista encadeada pelo nome.
+  - Se encontrada, empilha o valor.
+- Se não encontrada, exibe erro: **Variável não encontrada.**
+```shell
+push a
+```
+​
+pop <nome_variável>
+Desempilha um valor da pilha.
+Se a variável existir na lista, atualiza o valor.
+Se não existir, cria um novo nó com o nome e o valor.
+```shell
+pop resultado
+```
+## 🗂️ Estrutura Esperada do Projeto (Etapa 2)
+```shell
+  $ tree
+/lab-stackinterpreter
+│
+├── main.c             # REPL principal
+├── interpret.c        # Interpretador de comandos
+├── interpret.h
+├── stack.c            # Pilha
+├── stack.h
+├── lista.c            # Lista encadeada (variáveis)
+├── lista.h
+└── README.md
 ```
 
 ## 🤝 Autores
