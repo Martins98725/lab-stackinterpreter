@@ -73,7 +73,7 @@ O interpretador suporta os seguintes comandos:
 | `print`        | Desempilha o valor do topo da pilha e o imprime no console.                             |
 | `exit`         | Encerra a execução do programa de forma segura.                                         | 
 
-### 🧪 Exemplo d Interação
+### 🧪 Exemplo de Interação
 
 ```shell
 > push 10
@@ -130,6 +130,35 @@ pop resultado
 ├── lista.h
 └── README.md
 ```
+
+## **🧪 Exemplo de Interação**
+```shell
+> push 42
+> push 5
+> add
+> push 8
+> sub
+> pop a
+> push 56
+> push 8
+> add
+> pop b
+> push a
+> push b
+> add
+> push 6
+> add
+> print
+```
+
+**Explicação resumida do que esse código faz:**
+
+- Empilha 42 e 5 → soma = 47
+- Empilha 8 → subtrai: 47 - 8 = 39 → guarda em `a`
+- Empilha 56 e 8 → soma = 64 → guarda em `b`
+- Empilha `a` e `b` (valores 39 e 64) → soma = 103
+- Empilha 6 → soma final = 109
+- Imprime: `109`
 
 ## 🤝 Autores
 <table>
