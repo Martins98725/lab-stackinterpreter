@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "variaveis.h" 
+#include "lista.h" 
 
 static Variavel* lista_de_variaveis = NULL;
 
