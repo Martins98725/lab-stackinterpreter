@@ -1,12 +1,12 @@
+#include "lista.h"
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include "stack.h"
-#include "lista.h"
-
 #include "interpret.h"
 
 static Stack *stack = NULL;
+static struct list variable_list = {NULL};
 
 void interpret(const char *source)
 {
@@ -24,8 +24,31 @@ void interpret(const char *source)
 
     if (strcmp(op, "push") == 0)
     {
-        int value = atoi(arg);
-        stack_push(stack, value);
+        char *endptr;
+        int value = strtol(arg, &endptr, 10);
+
+        if (strlen(arg) == 0)
+        {
+            printf("Uso: push <valor ou nome_variavel>\n");
+            return;
+        }
+
+        if (*endptr == '\0')
+        {
+            stack_push(stack, value);
+        }
+        else
+        {
+            int val;
+            if (get_variable(&variable_list, arg, &val))
+            {
+                stack_push(stack, val);
+            }
+            else
+            {
+                printf("Variável não encontrada: %s\n", arg);
+            }
+        }
     }
     else if (strcmp(op, "add") == 0)
     {
@@ -35,7 +58,10 @@ void interpret(const char *source)
         if (numero1 == -1 || numero2 == -1)
         {
             printf("Erro: pilha com menos de 2 elementos.\n");
-
+            if (numero2 != -1)
+                stack_push(stack, numero2);
+            if (numero1 != -1)
+                stack_push(stack, numero1);
             return;
         }
         int resultado = numero1 + numero2;
@@ -75,9 +101,20 @@ void interpret(const char *source)
 
     else if (strcmp(op, "pop") == 0)
     {
+        if (strlen(arg) == 0)
+        {
+            printf("Uso: pop <nome_variável>\n");
+            return;
+        }
+
         int value = stack_pop(stack);
-        if (value != -1)
-            printf("Valor desempilhado: %d\n", value);
+        if (value == -1)
+        {
+            printf("Erro: pilha vazia \n");
+        }
+
+        set_variable(&variable_list, arg, value);
+        printf("Valor armazenado em '%s': %d\n", arg, value);
     }
 
     else if (strcmp(op, "div") == 0)
@@ -100,8 +137,6 @@ void interpret(const char *source)
 
         stack_print(stack);
     }
-
-
 
     else
     {
