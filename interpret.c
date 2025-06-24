@@ -25,7 +25,7 @@ void interpret(const char *source)
     if (strcmp(op, "push") == 0)
     {
         char *endptr;
-        int value = strtol(arg, &endptr, 10);
+        int value = strtol(arg, &endptr, 1);
 
         if (strlen(arg) == 0)
         {
@@ -101,20 +101,20 @@ void interpret(const char *source)
 
     else if (strcmp(op, "pop") == 0)
     {
-        if (strlen(arg) == 0)
+        if (arg[0] == '\0')
         {
-            printf("Uso: pop <nome_variável>\n");
+            printf("Uso: pop <nome_variavel>\n");
             return;
         }
-
-        int value = stack_pop(stack);
-        if (value == -1)
-        {
-            printf("Erro: pilha vazia \n");
+        int value_from_stack = stack_pop(stack);
+        if (value_from_stack == -1 && stack->top < 0)
+        { // Confirma que o -1 é de pilha vazia
+            printf("Erro: Pilha vazia, nao ha nada para 'pop'.\n");
         }
-
-        set_variable(&variable_list, arg, value);
-        printf("Valor armazenado em '%s': %d\n", arg, value);
+        else
+        {
+            set_variable(l, arg, value_from_stack);
+        }
     }
 
     else if (strcmp(op, "div") == 0)
